@@ -34,28 +34,6 @@
     position: relative; 
 }
 
-.logo {
-    width: 100%;
-    text-align: center;
-    transform: translateY(100%);
-    z-index: 2;
-}
-.logo img{
-    box-shadow: 0 3px 6px rgba(255, 255, 255, 0.16), 0 3px 6px rgba(252, 252, 252, 0.23);
-    transition: all .3s ease-in-out;
-}
-@media (max-width: 470px) {
-    .landing{
-        height: 50vh;
-    }
-    .logo {
-        width: 100%;
-        text-align: center;
-        transform: translateY(200%);
-    }
-}
-
-
 /* title  */
 
 @media (min-width: 60rem) {
