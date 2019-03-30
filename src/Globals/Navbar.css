@@ -1,0 +1,89 @@
+.header{
+    background: #231F20;
+    color: #AD9747;
+    height: 40px;
+}
+.header .number{
+    color: #fff;
+}
+.fab{
+    vertical-align: middle;
+    margin: 0px !important;
+}
+@media (max-width: 470px) {
+    .header .number{
+        display: none;
+    }
+    .header .line{
+        display: none;
+    }
+}
+
+@media (max-width: 380px) {
+    .fab a{
+        font-size: 0.7rem;
+    }
+}
+
+.fab img{
+    width: 180px;  
+}
+@media (max-width: 470px) {
+    .fab img{
+        width: 180px;   
+    }
+}
+.social{
+    padding: 2px 6px;
+    margin-right: 1px; 
+    color: #AD964E;
+}
+@media (min-width: 20rem) {
+    .social{
+        padding: 2px 3px;
+        margin-right: 0.5px; 
+    }
+}
+
+.line{
+    height: 22px;
+    width: 2px !important;
+    background: #ffff;
+}
+
+.nav{
+    background: #AD9747;
+    color: #fff;
+}
+
+.nav-item a{
+    color: #050505 !important;
+}
+
+.logoHeader{
+    width: 15rem;
+    padding-top: 2rem; 
+}
+
+@media only screen and (max-width: 770px){
+    .logoHeader{
+        width: 12rem;
+        padding-top: 2rem; 
+    }
+}
+
+@media only screen and (max-width: 470px){
+    .logoHeader{
+        width: 10rem;
+        padding-top: 2rem; 
+    }
+
+}
+
+
+
+.socialLinks {
+    top: -1.5rem;
+    z-index: 2;
+    position: relative;
+}
