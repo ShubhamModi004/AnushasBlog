@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import Layout from '../components/Layout'
 
 
 const portfolioSection = ({ data: { contentfulPortfolio } }) => {
     return (
-        
+        <Layout>
         <div>
             {console.log(contentfulPortfolio)}
             <div>
@@ -19,6 +20,7 @@ const portfolioSection = ({ data: { contentfulPortfolio } }) => {
                 />
             </div>
         </div>
+        </Layout>
     )
 }
 
