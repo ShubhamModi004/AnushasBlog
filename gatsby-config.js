@@ -7,7 +7,7 @@ if(process.env.NODE_ENV !== 'production'){
 module.exports = {
   siteMetadata: {
     title: `Anushas`,
-    description: `Anushas Designer Studio , Explore to view the greatest and latest design store in goa`,
+    description: `Anushas Designer Studio , Explore to see the greatest and latest design store in goa`,
     author: `blckStudio`,
   },
   plugins: [
