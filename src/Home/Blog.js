@@ -17,7 +17,6 @@ class Blog extends Component {
                             <h3>{post.header}</h3>
                             <p className="info">{post.posted}</p>
                             <p>
-                                {console.log(post.featuredImage)}
                                 <Img
                                     fluid={post.featuredImage.fluid}
                                 />

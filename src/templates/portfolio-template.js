@@ -8,10 +8,8 @@ const portfolioSection = ({ data: { contentfulPortfolio } }) => {
     return (
         <Layout>
         <div>
-            {console.log(contentfulPortfolio)}
             <div>
                 <h2>{contentfulPortfolio.title}</h2>
-                {console.log(contentfulPortfolio.portfolioImages)}
                 <div
                     dangerouslySetInnerHTML={{
                         __html: contentfulPortfolio.portfolioImages.childMarkdownRemark.html,

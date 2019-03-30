@@ -87,7 +87,6 @@ class Home extends Component {
                                 <div className="container latest_blog">
                                     <div className="container latest_blog">
                                         <ul className="post-list">
-                                            {console.log(data.edges[0])}
                                             <li>
                                                 <Link to={`/blogPosts/${post.slug}`}>
                                                     <h3>{post.header}</h3>
