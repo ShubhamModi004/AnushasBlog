@@ -21,11 +21,9 @@ class Home extends Component {
             <div>
                 <div className="conta">
                     <div className="landing">
-                            <div className="container">
-                                <div className="logo">
-                                    <Background/>
-                                </div>
-                            </div>
+                        <div className="logo">
+                            <Background/>
+                        </div>
                     </div>
 
 

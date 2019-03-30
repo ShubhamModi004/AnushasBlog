@@ -8,7 +8,7 @@
 }
 
 .logo {
-    width: 100%;
+    width: 80vw;
     text-align: center;
     transform: translateY(100%);
     padding: 0rem 4rem;
@@ -18,7 +18,7 @@
         height: 50vh;
     }
     .logo {
-        width: 100%;
+        width: 100vw;
         text-align: center;
         transform: translateY(200%);
     }
