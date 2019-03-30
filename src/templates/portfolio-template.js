@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 
 
 const portfolioSection = ({ data: { contentfulPortfolio } }) => {
