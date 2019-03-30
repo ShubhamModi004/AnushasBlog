@@ -39,11 +39,13 @@ class About extends Component {
 
 
                     <div className="story-intro wow fadeInUp">	
-                        <p className="capiial">Handcrafting intricate designs of a collective collection that starts with casual ethnic ware, extending up to bridal couture that pleases the eye. With strong Indian sentiments in each stitch, flowing with distinct embroideries and prints. Featuring traditional and experimental styles. It is a showcase of diversity throughout. With intimate client sessions that bring out the creativity, one can design their outfit from scratch, with the designer brewing up craft just for you. 
+                        <p className="capiial">Anusha's brings to you, Handcrafted intricate designs of a collective collection that starts with casual ethnic wear, extending up to bridal couture that pleases the eye. With strong Indian sentiments in each stitch, flowing with distinct embroideries and prints. Featuring traditional and experimental styles. It is a showcase of diversity throughout. With intimate client sessions that bring out the creativity, one can design their outfit from scratch, with the designer brewing up craft just for you. 
                         </p>
                     </div>
                     <p className="wow fadeInUp">
-                    Ensembles mixed with charm, contemporary cuts and silhouettes Anusha’s has a penchant for well finished craftsmanship. And is ready for you!	
+                    
+
+                    Ensembles mixed with charm, contemporary cuts and silhouettes Anusha’s has a penchant for well finished craftsmanship. And is ready for you!
                     </p>
                                         
                 </div>
