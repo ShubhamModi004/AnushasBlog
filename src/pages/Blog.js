@@ -39,7 +39,7 @@ export const query = graphql`
                 slug
                 featuredImage {
                     fluid(maxWidth: 400){
-                        ...GatsbyContentfulFluid_tracedSVG
+                        ...GatsbyContentfulFluid
                     }
                 }
             }
