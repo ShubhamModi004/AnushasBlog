@@ -30,7 +30,6 @@ const Layout = ({ children, dataBlog, dataPortfolio }) => (
     render={data => (
       <>
         <Navbar/>
-
         <div>
           <main>{children}</main>
           <Footer dataBlog={dataBlog} dataPortfolio={dataPortfolio}/>

@@ -9,8 +9,7 @@ import { FaAngleRight } from 'react-icons/fa';
 
 class Footer extends Component {
     render() {
-        const { dataBlog } = this.props;
-        const { dataPortfolio } = this.props;
+        const { dataBlog, dataPortfolio } = this.props;
         const post = dataBlog.edges[0].node;
         return (
             <div>
@@ -65,7 +64,7 @@ class Footer extends Component {
             </div>
             <div class="sub_footer container">
                 <div class="textaligncenter text_footer">
-                    © 2018 Anushas - Designed &amp; Developed by <a>Blck Studio</a>	
+                        © {new Date().getFullYear()} Anushas - Designed &amp; Developed by <a>Blck Studio</a>	
                 </div>
             </div>
             </div>

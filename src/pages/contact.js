@@ -7,7 +7,7 @@ import { graphql } from 'gatsby'
 // Importing components
 import Contact from '../Contact/Contact';
 
-const ContactPage = (data) => (
+const ContactPage = ({ data }) => (
     <Layout dataBlog={data.allContentfulBlog} dataPortfolio={data.allContentfulPortfolio}>
         <SEO title="Contact" keywords={[`gatsby`, `application`, `react`]} />
         <Contact />
