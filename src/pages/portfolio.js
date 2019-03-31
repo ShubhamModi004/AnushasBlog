@@ -8,14 +8,14 @@ import './portfolio.css';
 
 
 
-const Portfolio = ({ data: { allContentfulPortfolio } }) => {
+const Portfolio = ({ data }) => {
     
     return (
-        <Layout>
+        <Layout dataBlog={data.allContentfulBlog} dataPortfolio={data.allContentfulPortfolio}>
             <SEO title="Portfolio" keywords={[`Anushas`, `Fashion Designers In Goa`, `Best Fashion Designer`]} />
             {/* Products list*/}
             <div className="row">
-                    {allContentfulPortfolio.edges.map(({ node: post }) => (
+                    {data.allContentfulPortfolio.edges.map(({ node: post }) => (
                     <div className="col-md-4 col-sm-6">
                         <Link to={`/portfolioSection/${post.slug}`}>
                             <div className="resortwear">
@@ -38,10 +38,6 @@ const Portfolio = ({ data: { allContentfulPortfolio } }) => {
 
 
 
-
-
-
-
 export const query = graphql`
 {
    allContentfulPortfolio{
@@ -52,6 +48,21 @@ export const query = graphql`
                 featuredImage {
                     fluid(maxWidth: 400){
                         ...GatsbyContentfulFluid
+                    }
+                }
+            }
+        }
+    }
+    allContentfulBlog{
+        edges{
+            node{
+                header
+                posted
+                slug
+                description
+                featuredImage {
+                    fluid(maxWidth: 400){
+                        ...GatsbyContentfulFluid_tracedSVG
                     }
                 }
             }

@@ -4,27 +4,56 @@ import Img from 'gatsby-image'
 import Layout from '../components/layout'
 
 
-const blogPost = ({ data: { contentfulBlog}}) => {
+const blogPost = ({ data }) => {
     return (
-        <Layout>
+        <Layout dataBlog={data.allContentfulBlog} dataPortfolio={data.allContentfulPortfolio}>
             <div>
-                <h2>{contentfulBlog.header}</h2>
+                <h2>{data.contentfulBlog.header}</h2>
             </div>
         </Layout>
     )
 }
 
 export const query = graphql`
-query($slug: String!){
-    contentfulBlog(slug:{ eq:$slug}){
-        header
-        description
-        featuredImage {
-            fluid(maxWidth: 800){
-                ...GatsbyContentfulFluid
+        query($slug: String!){
+        contentfulBlog(slug:{ eq:$slug}){
+            header
+            description
+            featuredImage {
+                fluid(maxWidth: 800){
+                    ...GatsbyContentfulFluid
+                }
             }
         }
-    }
+        allContentfulPortfolio{
+            edges{
+                node{
+                    title
+                    slug
+                    featuredImage {
+                        fluid(maxWidth: 400){
+                            ...GatsbyContentfulFluid
+                        }
+                    }
+                }
+            }
+        }
+        allContentfulBlog{
+            edges{
+                node{
+                    header
+                    posted
+                    slug
+                    description
+                    featuredImage {
+                        fluid(maxWidth: 400){
+                            ...GatsbyContentfulFluid_tracedSVG
+                        }
+                    }
+                }
+            }
+        }
+
 }
 `
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from "gatsby"
+import Img from 'gatsby-image'
+import { graphql, Link } from 'gatsby'
 
 
 // import icons
@@ -8,6 +9,9 @@ import { FaAngleRight } from 'react-icons/fa';
 
 class Footer extends Component {
     render() {
+        const { dataBlog } = this.props;
+        const { dataPortfolio } = this.props;
+        const post = dataBlog.edges[0].node;
         return (
             <div>
             <div class="container-fluid primary_footer">
@@ -25,18 +29,29 @@ class Footer extends Component {
                         </div>
                         <div class="col-md-3 footer_blog">
                             <h6>Latest Blog</h6>
-                            {/* {% component 'blogPosts2' %} */}
+                            <ul className="post-list">
+                                <li>
+                                    <Link to={`/blogPosts/${post.slug}`}>
+                                        <p className="postTitle">{post.header}</p>
+                                        <p className="info">{post.posted}</p>
+                                        <p>
+                                            <Img
+                                                fluid={post.featuredImage.fluid}
+                                            />
+                                        </p>
+                                        <p>{post.description}</p>
+                                    </Link>
+                                </li>
+                            </ul>
                     </div>
                         <div class="col-md-3 margin">
                             <h6>Popular Tags</h6>
                             <div class="tagcloud">
-                                <a href="{{ 'resortwear'| page }}" class="tag-cloud-link tag-link-30 tag-link-position-1" aria-label="adventure (4 items)">Resort Wear</a>
-                                <a href="{{ 'bridal'| page }}" class="tag-cloud-link tag-link-30 tag-link-position-1" aria-label="adventure (4 items)">Bridal Wear</a>
-                                <a href="{{ 'classictraditional'| page }}" class="tag-cloud-link tag-link-30 tag-link-position-1" aria-label="adventure (4 items)">Classic Taditional</a>
-                                <a href="{{ 'cocktailwear'| page }}" class="tag-cloud-link tag-link-30 tag-link-position-1" aria-label="adventure (4 items)">Cocktail Wear</a>
-                                <a href="{{ 'eveningwear'| page }}" class="tag-cloud-link tag-link-30 tag-link-position-1" aria-label="adventure (4 items)">Evening Wear</a>
-                                <a href="{{ 'indoegyption'| page }}" class="tag-cloud-link tag-link-30 tag-link-position-1" aria-label="adventure (4 items)">Indo Egyption</a>
-                                <a href="{{ 'indowestern'| page }}" class="tag-cloud-link tag-link-30 tag-link-position-1" aria-label="adventure (4 items)">Indo Western</a>
+                                {dataPortfolio.edges.map(({ node: post }) => (
+                                        <Link to={`/portfolioSection/${post.slug}`} class="tag-cloud-link tag-link-30 tag-link-position-1" aria-label="adventure (4 items)">
+                                            {post.title}
+                                        </Link>
+                                ))}
                             </div>
 
                         </div>
@@ -58,5 +73,25 @@ class Footer extends Component {
     }
 }
 
+
+export const query = graphql`
+{
+   allContentfulBlog{
+        edges{
+            node{
+                header
+                posted
+                slug
+                description
+                featuredImage {
+                    fluid(maxWidth: 400){
+                        ...GatsbyContentfulFluid_tracedSVG
+                    }
+                }
+            }
+        }
+    }
+}
+`
 
 export default Footer;

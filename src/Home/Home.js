@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Sidebar from '../Globals/Sidebar'
 import { Link } from 'gatsby';
 import Img from 'gatsby-image'
-import Fade from 'react-reveal/Fade';
 
 import Background from './Background';
 // import css

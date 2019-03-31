@@ -4,15 +4,15 @@ import Img from 'gatsby-image'
 import Layout from '../components/layout'
 
 
-const portfolioSection = ({ data: { contentfulPortfolio } }) => {
+const portfolioSection = ({ data }) => {
     return (
-        <Layout>
+        <Layout dataBlog={data.allContentfulBlog} dataPortfolio={data.allContentfulPortfolio}>
         <div>
             <div>
-                <h2>{contentfulPortfolio.title}</h2>
+                <h2>{data.contentfulPortfolio.title}</h2>
                 <div
                     dangerouslySetInnerHTML={{
-                        __html: contentfulPortfolio.portfolioImages.childMarkdownRemark.html,
+                        __html: data.contentfulPortfolio.portfolioImages.childMarkdownRemark.html,
                     }}
                     className="ImagesFetched"
                 />
@@ -23,12 +23,40 @@ const portfolioSection = ({ data: { contentfulPortfolio } }) => {
 }
 
 export const query = graphql`
-query($slug: String!){
+    query($slug: String!){
     contentfulPortfolio(slug:{ eq:$slug}){
         title
         portfolioImages{
             childMarkdownRemark {
                 html
+            }
+        }
+    }
+    allContentfulPortfolio{
+        edges{
+            node{
+                title
+                slug
+                featuredImage {
+                    fluid(maxWidth: 400){
+                        ...GatsbyContentfulFluid
+                    }
+                }
+            }
+        }
+    }
+    allContentfulBlog{
+        edges{
+            node{
+                header
+                posted
+                slug
+                description
+                featuredImage {
+                    fluid(maxWidth: 400){
+                        ...GatsbyContentfulFluid_tracedSVG
+                    }
+                }
             }
         }
     }

@@ -12,7 +12,7 @@ class IndexPage extends Component {
   render() {
     const { data } = this.props;
     return (
-        <Layout>
+        <Layout dataBlog={data.allContentfulBlog} dataPortfolio={data.allContentfulPortfolio}>
           <SEO title="Home" keywords={[`Anushas`, `Fashion Designers In Goa`, `Best Fashion Designer`]} />
           <Home data={data.allContentfulBlog} />
         </Layout>
@@ -23,7 +23,20 @@ class IndexPage extends Component {
 
 export const query = graphql`
 {
-   allContentfulBlog{
+   allContentfulPortfolio{
+        edges{
+            node{
+                title
+                slug
+                featuredImage {
+                    fluid(maxWidth: 400){
+                        ...GatsbyContentfulFluid
+                    }
+                }
+            }
+        }
+    }
+    allContentfulBlog{
         edges{
             node{
                 header
