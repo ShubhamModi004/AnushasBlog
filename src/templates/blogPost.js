@@ -9,6 +9,12 @@ const blogPost = ({ data }) => {
         <Layout dataBlog={data.allContentfulBlog} dataPortfolio={data.allContentfulPortfolio}>
             <div>
                 <h2>{data.contentfulBlog.header}</h2>
+                <div
+                    dangerouslySetInnerHTML={{
+                        __html: data.contentfulBlog.longDescription.childMarkdownRemark.html,
+                    }}
+                    className="ImagesFetched"
+                />
             </div>
         </Layout>
     )
@@ -19,6 +25,11 @@ export const query = graphql`
         contentfulBlog(slug:{ eq:$slug}){
             header
             description
+            longDescription{
+                childMarkdownRemark {
+                    html
+                }
+            }
             featuredImage {
                 fluid(maxWidth: 800){
                     ...GatsbyContentfulFluid
@@ -50,6 +61,7 @@ export const query = graphql`
                             ...GatsbyContentfulFluid_tracedSVG
                         }
                     }
+                    
                 }
             }
         }
