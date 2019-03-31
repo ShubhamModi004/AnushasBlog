@@ -24,6 +24,7 @@ class Home extends Component {
                             <div className="container">
                                 <div className="logo">
                                     <Background/>
+                                    <h4> Bespoke Apparels & Accessories <br/> Design Studio </h4> 
                                 </div>
                             </div>
                     </div>
