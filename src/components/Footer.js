@@ -64,7 +64,7 @@ class Footer extends Component {
             </div>
             <div class="sub_footer container">
                 <div class="textaligncenter text_footer">
-                        © {new Date().getFullYear()} Anushas - Designed &amp; Developed by <a>Blck Studio</a>	
+                        © {new Date().getFullYear()} Anushas - Designed &amp; Developed by Blck Studio.	
                 </div>
             </div>
             </div>

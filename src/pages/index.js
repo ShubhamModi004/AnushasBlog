@@ -1,10 +1,9 @@
 import React, { Component } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 
 
-import Blog from './Blog';
 // Importing components
 import Home from '../Home/Home';
 
